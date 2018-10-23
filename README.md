@@ -14,4 +14,4 @@
 ### Java Class vs Kotlin Class
 
 ## References
-* [Kotlin Site](https://kotlinlang.org/docs/reference/)
+* Kotlin Site: [https://kotlinlang.org/docs/reference/] (https://kotlinlang.org/docs/reference/)
