@@ -15,7 +15,36 @@ Tuesday, October 23, 2018
 
 Slide https://docs.google.com/presentation/d/1AsYR8CfSQprW0SP5S-19kuREeD88_F8yB-quibEo3DM/edit?usp=sharing
 
+## Instalation
+
+Kotlin ya viene integrado a Android Studio(>=3.0) e Intellij IDEA
+
+Command Line Compiler https://kotlinlang.org/docs/tutorials/command-line.html
+
+```
+kotlin -version
+```
+output 
+```
+Kotlin version 1.2.51-release-125 (JRE 1.8.0_191-b12)
+```
+
+RPEL (Interactive shell)
+```
+kotlinc-jvm
+Welcome to Kotlin version 1.2.51 (JRE 1.8.0_191-b12)
+
+>>> println("Welcome to the Kotlin shell")
+Welcome to the Kotlin shell
+```
+* Usar el commando **:quit** para salir 
+
+
 ## Kotlin Language
+
+Usemos **Kotlin Playground** para jugar con Kotlin y compilar en linea https://play.kotlinlang.org/
+
+*Compilador en linea para Java https://www.compilejava.net/*
 
 - Hello World
 
@@ -33,31 +62,31 @@ Hello Kotlin !
 - Functions
 
 ```kotlin
-fun showMessage(message: String): Unit {                               // 1
+fun showMessage(message: String): Unit {                               
     println(message)
 }
 ```
 
 ```kotlin
-fun showMessage2(message: String){                                    // 2
+fun showMessage2(message: String){                                    
     println(message)
 }
 ```
 
 ```kotlin
-fun showMessage(message:String, param:String="Parameter"){            // 3
+fun showMessage(message:String, param:String="Parameter"){            
     println("message : $message param : $param")
 }
 ```
 
 ```kotlin
-fun area(base:Int, height:Int):Int{                                   // 4
+fun area(base:Int, height:Int):Int{                                   
     return base*height
 }
 ```
 
 ```kotlin
-fun perimeter(base:Int, height:Int)=2*base+ 2*height                  // 5
+fun perimeter(base:Int, height:Int)=2*base+ 2*height                 
 ```
 
 ```kotlin
@@ -314,7 +343,7 @@ Kotlin is a cool language!
 **Conditional expression**
 
 ```kotlin
-fun max(a: Int, b: Int) = if (a > b) a else b         // 1
+fun max(a: Int, b: Int) = if (a > b) a else b         
 println(max(99, -42))
 ```
 output
@@ -329,12 +358,12 @@ class MyClass
 
 fun cases(obj: Any) {
     when (obj) {
-        1 -> println("One")                          // 1
-        "Hello" -> println("Greeting")               // 2
-        is Long -> println("Long")                   // 3
-        !is String -> println("Not a string")        // 4
-        else -> println("Unknown")                   // 5
-    }
+        1 -> println("One")                         
+        "Hello" -> println("Greeting")              
+        is Long -> println("Long")                   
+        !is String -> println("Not a string")        
+        else -> println("Unknown")                  
+    
 }
 
 fun main(args:Array<String>) {
@@ -363,7 +392,7 @@ fun main(args:Array<String>) {
 
     //for
     val jvmLanguages = listOf("Kotlin", "Java", "Groovy")
-    for (language in jvmLanguages) {                               // 1
+    for (language in jvmLanguages) {                               
         println("Jvm language : $language")
     }
 }
@@ -412,6 +441,148 @@ item : 3
 item : 4
 ```
 
+**Classes**
+
+```kotlin
+class Language()
+
+class JVMLanguage(val id:Int, val name:String)
+
+class JavaLanguage(val id:Int , var nullable:Boolean)
+
+fun main(args:Array<String>) {
+    println("Classes!")
+
+    val language= Language()
+    println("language $language")
+
+    val jvmLanguage= JVMLanguage(0,"Kotlin")
+
+    println("jvmLanguage $jvmLanguage")
+    println("jvmLanguage ${jvmLanguage.id}  & ${jvmLanguage.name}")
+
+    //jvmLanguage.id=1
+    //jvmLanguage.name="Java"
+
+    val javaLanguage= JavaLanguage(1,false)
+    println("javaLanguage ${javaLanguage.id}  & ${javaLanguage.nullable}")
+    javaLanguage.nullable=true
+
+    println("javaLanguage ${javaLanguage.id}  & ${javaLanguage.nullable}")
+
+}
+```
+output
+```
+Classes!
+language Language@5e2de80c
+jvmLanguage JVMLanguage@1d44bcfa
+jvmLanguage 0  & Kotlin
+javaLanguage 1  & false
+javaLanguage 1  & true
+```
+
+**Data Classes**
+
+```java
+package com.kotlin.samples;
+
+public class Customer {
+
+    private String name;
+    private String email;
+    private String company;
+
+    public Customer(String name, String email, String company) {
+        this.name = name;
+        this.email = email;
+        this.company = company;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+}
+
+```
+
+```kotlin
+data class Customer(val name: String, val email: String, val company: String)
+```
+
+**Inheritance**
+```kotlin
+open class ObsoleteLanguage(){
+    open fun sayHello() {       // 2
+        println("I'm bored...")
+    }
+}
+
+open class AwesomeLanguage(val message:String){
+    open fun showMessage(){
+        println(message)
+    }
+}
+
+
+class JavaOLanguage:ObsoleteLanguage(){
+    override fun sayHello() {
+        println("I'm an obsolete language")
+    }
+}
+
+class KotlinAwesomeLanguage(message:String):AwesomeLanguage(message)
+
+fun main(args:Array<String>) {
+    val obsoleteLanguage: ObsoleteLanguage = JavaOLanguage()
+    obsoleteLanguage.sayHello()
+
+    val awesomeLanguage:AwesomeLanguage= KotlinAwesomeLanguage("Kotlin is a cool language!")
+    awesomeLanguage.showMessage()
+}
+```
+
+output
+```
+I'm an obsolete language
+Kotlin is a cool language!
+```
+
+
+# Activities
+
+- Verificar/Instalar versión de Kotlin
+- Usar el compilador en Linea (Playground) https://play.kotlinlang.org/
+- Crear un proyecto Kotlin desde Intellij IDEA
+- Crear un proyecto Androd con Kotlin desde Android Studio
+
+*Si tienes algún error de compatibilidad de kotlin con la versión de Android Studio o Gradle puede probar cambiando de versión de Kotlin*
+
+```
+    ext.kotlin_version = '1.2.50'
+    //ext.kotlin_version = '1.2.41'
+    //ext.kotlin_version = '1.2.61'
+```
 
 # References 
 
@@ -422,4 +593,6 @@ item : 4
 - Google codelabs https://codelabs.developers.google.com/
 - Android Studio https://developer.android.com/studio/install
 - Genymotion https://www.genymotion.com/account/create/
+- Working with the Command Line compiler https://kotlinlang.org/docs/tutorials/command-line.html
+
 
