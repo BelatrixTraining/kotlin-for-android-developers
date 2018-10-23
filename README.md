@@ -15,6 +15,31 @@ Tuesday, October 23, 2018
 
 Slide https://docs.google.com/presentation/d/1AsYR8CfSQprW0SP5S-19kuREeD88_F8yB-quibEo3DM/edit?usp=sharing
 
+## Instalation
+
+Kotlin ya viene integrado a Android Studio(>=3.0) e Intellij IDEA
+
+Command Line Compiler https://kotlinlang.org/docs/tutorials/command-line.html
+
+```
+kotlin -version
+```
+output 
+```
+Kotlin version 1.2.51-release-125 (JRE 1.8.0_191-b12)
+```
+
+RPEL (Interactive shell)
+```
+kotlinc-jvm
+Welcome to Kotlin version 1.2.51 (JRE 1.8.0_191-b12)
+
+>>> println("Welcome to the Kotlin shell")
+Welcome to the Kotlin shell
+```
+* Usar el commando **:quit** para salir 
+
+
 ## Kotlin Language
 
 - Hello World
@@ -422,4 +447,6 @@ item : 4
 - Google codelabs https://codelabs.developers.google.com/
 - Android Studio https://developer.android.com/studio/install
 - Genymotion https://www.genymotion.com/account/create/
+- Working with the Command Line compiler https://kotlinlang.org/docs/tutorials/command-line.html
+
 
