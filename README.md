@@ -15,6 +15,8 @@
 ### General Differences
 1. In Kotlin functions and variables not necessarily are part of a class.
 1. Semicolon is not used at the end of a sentence.
+1. **extends** and **implements** keyword are not used for inheritance, : is used for this.
+1. @Override is replaced by **override**
 
 ### Java Class vs Kotlin Class
 There are some differences between a class created in Java with a class created in Kotlin:
@@ -24,7 +26,7 @@ from a class this should be declared as **open** class. **abstract** classes are
 1. Properties are declared in the class constructor.
 1. In Kotlin a default value for each attribute can be defined.
 1. In Kotlin getters and setters are not necessary, so, the language reduces a lot of Boilerplate code that Java adds to a class.
-But Getters and Setter can also be defined in Kotlin.
+But Getters and Setter can also be defined in Kotlin. val allows only get, var allows get and set.
 1. A Kotlin class can be defined in a single line.
 1. A class can have multiple constructors declared using the word **constructor**
 1. Data classes are used to define POJOs, it has to be declared with the **data** key word and all properties
@@ -66,6 +68,8 @@ public class Person {
 open class Person (val name: String, val age: Int)
 class Developer(val name: String): Person(name, 20) // In this case a Developer is a Person and its age is 20 by default.
 ```
+
+### Java Types vs Kotlin Types
 
 ## References
 * Kotlin Site: https://kotlinlang.org/docs/reference/
