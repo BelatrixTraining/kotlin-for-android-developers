@@ -447,6 +447,14 @@ item : 4
 - Crear un proyecto Kotlin desde Intellij IDEA
 - Crear un proyecto Androd con Kotlin desde Android Studio
 
+*Si tienes algún error de compatibilidad de kotlin con la versión de Android Studio o Gradle puede probar cambiando de versión de Kotlin*
+
+```
+    ext.kotlin_version = '1.2.50'
+    //ext.kotlin_version = '1.2.41'
+    //ext.kotlin_version = '1.2.61'
+```
+
 # References 
 
 - Getting Started with IntelliJ IDEA https://kotlinlang.org/docs/tutorials/getting-started.html
