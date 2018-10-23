@@ -440,7 +440,12 @@ item : 2
 item : 3
 item : 4
 ```
+# Activities
 
+- Verificar/Instalar versión de Kotlin
+- Usar el compilador en Linea (Playground) https://play.kotlinlang.org/
+- Crear un proyecto Kotlin desde Intellij IDEA
+- Crear un proyecto Androd con Kotlin desde Android Studio
 
 # References 
 
