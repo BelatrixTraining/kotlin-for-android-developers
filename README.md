@@ -42,6 +42,10 @@ Welcome to the Kotlin shell
 
 ## Kotlin Language
 
+Usemos **Kotlin Playground** para jugar con Kotlin y compilar en linea https://play.kotlinlang.org/
+
+*Compilador en linea para Java https://www.compilejava.net/*
+
 - Hello World
 
 ```kotlin
@@ -58,31 +62,31 @@ Hello Kotlin !
 - Functions
 
 ```kotlin
-fun showMessage(message: String): Unit {                               // 1
+fun showMessage(message: String): Unit {                               
     println(message)
 }
 ```
 
 ```kotlin
-fun showMessage2(message: String){                                    // 2
+fun showMessage2(message: String){                                    
     println(message)
 }
 ```
 
 ```kotlin
-fun showMessage(message:String, param:String="Parameter"){            // 3
+fun showMessage(message:String, param:String="Parameter"){            
     println("message : $message param : $param")
 }
 ```
 
 ```kotlin
-fun area(base:Int, height:Int):Int{                                   // 4
+fun area(base:Int, height:Int):Int{                                   
     return base*height
 }
 ```
 
 ```kotlin
-fun perimeter(base:Int, height:Int)=2*base+ 2*height                  // 5
+fun perimeter(base:Int, height:Int)=2*base+ 2*height                 
 ```
 
 ```kotlin
@@ -339,7 +343,7 @@ Kotlin is a cool language!
 **Conditional expression**
 
 ```kotlin
-fun max(a: Int, b: Int) = if (a > b) a else b         // 1
+fun max(a: Int, b: Int) = if (a > b) a else b         
 println(max(99, -42))
 ```
 output
@@ -354,12 +358,12 @@ class MyClass
 
 fun cases(obj: Any) {
     when (obj) {
-        1 -> println("One")                          // 1
-        "Hello" -> println("Greeting")               // 2
-        is Long -> println("Long")                   // 3
-        !is String -> println("Not a string")        // 4
-        else -> println("Unknown")                   // 5
-    }
+        1 -> println("One")                         
+        "Hello" -> println("Greeting")              
+        is Long -> println("Long")                   
+        !is String -> println("Not a string")        
+        else -> println("Unknown")                  
+    
 }
 
 fun main(args:Array<String>) {
@@ -388,7 +392,7 @@ fun main(args:Array<String>) {
 
     //for
     val jvmLanguages = listOf("Kotlin", "Java", "Groovy")
-    for (language in jvmLanguages) {                               // 1
+    for (language in jvmLanguages) {                               
         println("Jvm language : $language")
     }
 }
