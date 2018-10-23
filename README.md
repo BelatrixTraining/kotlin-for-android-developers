@@ -594,5 +594,6 @@ Kotlin is a cool language!
 - Android Studio https://developer.android.com/studio/install
 - Genymotion https://www.genymotion.com/account/create/
 - Working with the Command Line compiler https://kotlinlang.org/docs/tutorials/command-line.html
+- Jetbrains / Kotlin examples https://github.com/JetBrains/kotlin-examples
 
 
