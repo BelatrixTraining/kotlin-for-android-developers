@@ -37,7 +37,7 @@ Welcome to Kotlin version 1.2.51 (JRE 1.8.0_191-b12)
 >>> println("Welcome to the Kotlin shell")
 Welcome to the Kotlin shell
 ```
-* Usar el commando **:quit** para salir 
+* Usar el command **:quit** para salir 
 
 
 ## Kotlin Language
