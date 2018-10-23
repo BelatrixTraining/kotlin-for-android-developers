@@ -440,6 +440,135 @@ item : 2
 item : 3
 item : 4
 ```
+
+**Classes**
+
+```kotlin
+class Language()
+
+class JVMLanguage(val id:Int, val name:String)
+
+class JavaLanguage(val id:Int , var nullable:Boolean)
+
+fun main(args:Array<String>) {
+    println("Classes!")
+
+    val language= Language()
+    println("language $language")
+
+    val jvmLanguage= JVMLanguage(0,"Kotlin")
+
+    println("jvmLanguage $jvmLanguage")
+    println("jvmLanguage ${jvmLanguage.id}  & ${jvmLanguage.name}")
+
+    //jvmLanguage.id=1
+    //jvmLanguage.name="Java"
+
+    val javaLanguage= JavaLanguage(1,false)
+    println("javaLanguage ${javaLanguage.id}  & ${javaLanguage.nullable}")
+    javaLanguage.nullable=true
+
+    println("javaLanguage ${javaLanguage.id}  & ${javaLanguage.nullable}")
+
+}
+```
+output
+```
+Classes!
+language Language@5e2de80c
+jvmLanguage JVMLanguage@1d44bcfa
+jvmLanguage 0  & Kotlin
+javaLanguage 1  & false
+javaLanguage 1  & true
+```
+
+**Data Classes**
+
+```java
+package com.kotlin.samples;
+
+public class Customer {
+
+    private String name;
+    private String email;
+    private String company;
+
+    public Customer(String name, String email, String company) {
+        this.name = name;
+        this.email = email;
+        this.company = company;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+}
+
+```
+
+```kotlin
+data class Customer(val name: String, val email: String, val company: String)
+```
+
+**Inheritance**
+```kotlin
+open class ObsoleteLanguage(){
+    open fun sayHello() {       // 2
+        println("I'm bored...")
+    }
+}
+
+open class AwesomeLanguage(val message:String){
+    open fun showMessage(){
+        println(message)
+    }
+}
+
+
+class JavaOLanguage:ObsoleteLanguage(){
+    override fun sayHello() {
+        println("I'm an obsolete language")
+    }
+}
+
+class KotlinAwesomeLanguage(message:String):AwesomeLanguage(message)
+
+fun main(args:Array<String>) {
+    val obsoleteLanguage: ObsoleteLanguage = JavaOLanguage()
+    obsoleteLanguage.sayHello()
+
+    val awesomeLanguage:AwesomeLanguage= KotlinAwesomeLanguage("Kotlin is a cool language!")
+    awesomeLanguage.showMessage()
+}
+```
+
+output
+```
+I'm an obsolete language
+Kotlin is a cool language!
+```
+
+
 # Activities
 
 - Verificar/Instalar versión de Kotlin
