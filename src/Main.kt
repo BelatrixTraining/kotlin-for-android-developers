@@ -5,9 +5,9 @@ fun main(args: Array<String>) {
     // kvararg
     // kunitreturn
     // kinfix
+    // kgenerics
     // kinlinefunction
     // kextensions
-    // kgenerics
     // klambdas
     // kclosures
 }
