@@ -28,11 +28,23 @@ fun filterExample() {
 fun mapExample() {
     val numbers = listOf(1, -1, 2)
     println(numbers.filter { it > 0 })
-    println(numbers.map { it * it } == listOf(1, 1, 4))
+    println(numbers.map { it * it })
+}
+
+fun example01() {
+    val names = arrayOf("Carlos", "Raul", "Andres", "Sergio", "Kausha", "Fufi")
+
+    val name = names
+            .filter { name -> name.startsWith("S", ignoreCase = true) }
+            .sortedBy { name -> name.length }
+            .firstOrNull()
+
+    println(name)
 }
 
 fun main(args: Array<String>) {
     foldExample()
     filterExample()
     mapExample()
+    example01()
 }
