@@ -27,7 +27,6 @@ fun soYouWannaGetNullPointerException(team: Team?) {
         team!!.play()
     } catch (exception: NullPointerException) {
         println("Oh damn it :(")
-        //exception.printStackTrace()
     }
 }
 
