@@ -1,6 +1,3 @@
-data class Developer(var name: String)
-data class QA(var name: String)
-
 fun main(args: Array<String>) {
     val dev = Developer("Gunnaringumu Diminson, Yugunothwer Misinjawer")
     val qa = QA("Ckipther Alewphawer Yacunah, Zumac Yaxche")

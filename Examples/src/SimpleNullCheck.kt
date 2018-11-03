@@ -23,14 +23,12 @@ fun testSimpleNullCheck(x: String?) {
     }
 }
 
-var someRandomValue: String? = null
-
 // Intentionally commented out
 /*fun testSimpleNullCheckWithSomeRandomMutableValue() {
-    if (someRandomValue != null) {
+    if (randomString != null) {
         println("Haha, I am not null, gonna use the not null assertion operator here!")
 
-        val y: Int = someRandomValue.length + 10
+        val y: Int = randomString.length + 10
 
         println(y)
     } else {
@@ -39,24 +37,20 @@ var someRandomValue: String? = null
 }*/
 
 fun testSimpleNullCheckWithSomeRandomMutableValueMultiThreads() {
-    someRandomValue = "12345"
+    randomString = "12345"
 
     val executor = Executors.newSingleThreadScheduledExecutor()
 
     executor.schedule({
-        someRandomValue = null
+        randomString = null
     }, 1000, TimeUnit.MILLISECONDS)
 
-    if (someRandomValue != null) {
-        println("I am not null, but gonna check this again after 2 secs, just in case :)")
+    if (randomString != null) {
+        println("I am not null, but let's print this value after 2 secs :)")
 
         Thread.sleep(2000)
 
-        if (someRandomValue != null) {
-            println("This sounds reasonable right?")
-        } else {
-            println("Not this time, I am null now ;)")
-        }
+        println(randomString ?: "I am null. (whaaaaat?)")
     } else {
         println("Hey there!, I am null :D")
     }

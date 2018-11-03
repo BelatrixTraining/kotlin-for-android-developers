@@ -6,11 +6,9 @@ fun main(args: Array<String>) {
     testIfNullExpression(null)
 }
 
-data class Dev(var name: String?)
-
 fun testElvisOperator() {
-    val androidDev = Dev("Siwis")
-    val iosDev = Dev(null)
+    val androidDev = Developer("Siwis")
+    val iosDev = Developer(null)
 
     println("androidDev's name is ${androidDev.name ?: "null 100% real no fake"}")
     println("iosDev's name is ${iosDev.name ?: "null 100% real no fake"}")
