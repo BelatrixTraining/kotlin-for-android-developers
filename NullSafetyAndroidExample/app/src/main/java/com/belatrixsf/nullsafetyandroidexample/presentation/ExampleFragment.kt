@@ -55,6 +55,8 @@ class ExampleFragment: Fragment(), Callback<GetProblemsResponse> {
 
     override fun onResponse(call: Call<GetProblemsResponse>, response: Response<GetProblemsResponse>) {
         if (isAdded) {
+            progressBar.visibility = View.GONE
+
             if (response.isSuccessful) {
                 response.body()?.result?.problems?.takeIf {
                     it.isNotEmpty()
@@ -70,6 +72,7 @@ class ExampleFragment: Fragment(), Callback<GetProblemsResponse> {
 
     override fun onFailure(call: Call<GetProblemsResponse>, t: Throwable) {
         if (isAdded) {
+            progressBar.visibility = View.GONE
             Toast.makeText(context, "Something went wrong :(", Toast.LENGTH_SHORT).show()
         }
     }

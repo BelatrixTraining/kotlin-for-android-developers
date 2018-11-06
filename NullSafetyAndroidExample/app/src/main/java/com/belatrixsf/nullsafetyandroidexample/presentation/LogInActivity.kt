@@ -27,14 +27,12 @@ class LogInActivity: AppCompatActivity() {
         continueButton = findViewById(R.id.continueButton)
 
         continueButton.setOnClickListener {
-            val username = usernameEditText.text
+            val username = usernameEditText.text.toString()
 
             if (username.isNotEmpty() && username.isNotBlank()) {
-                Intent(this@LogInActivity, ExampleActivity::class.java).apply {
+                startActivity(Intent(this@LogInActivity, ExampleActivity::class.java).apply {
                     putExtra(Constants.ARG_USERNAME, username)
-                }.let {
-                    startActivity(it)
-                }
+                })
             } else {
                 Toast.makeText(this@LogInActivity, "Invalid username!!", Toast.LENGTH_SHORT).show()
             }
