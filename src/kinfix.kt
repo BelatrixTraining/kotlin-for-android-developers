@@ -10,9 +10,11 @@ infix fun Int.myShl(x: Int): Int {
 fun testInfix() {
     // calling the function using the infix notation
     println(1 myShl 7)
+    // 1 * 7 = 7
 
     // is the same as
     println(4.myShl(2))
+    // 4 * 2 = 8
 }
 
 fun main(args: Array<String>) {

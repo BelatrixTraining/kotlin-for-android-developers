@@ -3,7 +3,6 @@
 // Básicamente copia funciones y parámetros a forma local.
 // https://www.quora.com/When-do-we-use-inline-function
 
-
 inline fun inlineTest(a: Int, callback: () -> Unit): Int {
     callback()
     return 7 * a

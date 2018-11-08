@@ -17,12 +17,17 @@ fun foldExample() {
 }
 
 fun filterExample() {
+    println()
+    println("Filter Example")
     val items = listOf(1, 2, 3, 4, 5)
 
     println(items)
-    items.filter { it % 2 == 0 }.forEach {
+    items.filter { it % 2 != 0 }.forEach {
         println("\t$it")
+        // Customer it.name, it.lastName
     }
+    println()
+    println()
 }
 
 fun mapExample() {
@@ -32,10 +37,11 @@ fun mapExample() {
 }
 
 fun example01() {
-    val names = arrayOf("Carlos", "Raul", "Andres", "Sergio", "Kausha", "Fufi")
+    println()
+    val names = arrayOf("Carlos", "Raul", "Andres", "Sergio", "Kausha", "Fufi", "Santilli", "Saoco")
 
     val name = names
-            .filter { name -> name.startsWith("S", ignoreCase = true) }
+            .filter { name -> name.startsWith("z", ignoreCase = true) }
             .sortedBy { name -> name.length }
             .firstOrNull()
 

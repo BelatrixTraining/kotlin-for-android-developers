@@ -14,12 +14,21 @@ fun paramLambda02(x: Double, y: Float = 0.0f, callback: () -> Unit = {}) {
 }
 
 fun paramLambdaTest01() {
-    println("Run bobby Run")
+    println("Belatrix Kotlin Class")
 }
 
 fun main(args: Array<String>) {
+    println("Case 1")
     paramLambda01(x = 7.0)
+    println()
+    println("Case 2")
     paramLambda01(x = 0.0, callback = paramLambdaTest01())
+    println()
+    println("Case 3")
     paramLambda02(x = 5.0)
-    paramLambda02(x = 5.0, y = 7.0f) { println("Running!") }
+    println()
+    println("Case 4")
+    paramLambda02(x = 5.0, y = 7.0f) {
+        println("Running!")
+    }
 }
