@@ -14,7 +14,7 @@ import com.kotlin.samples.kotlinapp.model.Minion
  * @since : 11/13/18
  * @see : https://developer.android.com/index.html
  */
-class MinionAdapter(val minions:List<Minion>):RecyclerView.Adapter<MinionAdapter.ViewHolder>() {
+class MinionAdapter(val minions:List<Minion>,val mListener:MinionItemListener?):RecyclerView.Adapter<MinionAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view= LayoutInflater.from(parent?.context)
@@ -27,9 +27,15 @@ class MinionAdapter(val minions:List<Minion>):RecyclerView.Adapter<MinionAdapter
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder?.textView?.text=minions[position].name
-    }
+        val name= minions[position].name
+        val image=minions[position].image?:0
+        holder?.textView?.text=name
+        holder?.imageView.setImageResource(image)
 
+        holder?.imageView.setOnClickListener {
+            mListener?.onSelectedItem(minions[position])
+        }
+    }
 
     class ViewHolder(item:View):RecyclerView.ViewHolder(item){
         val imageView= item.findViewById<ImageView>(R.id.imageView)

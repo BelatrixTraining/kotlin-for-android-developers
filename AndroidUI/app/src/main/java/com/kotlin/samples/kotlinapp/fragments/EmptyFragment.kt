@@ -1,21 +1,15 @@
 package com.kotlin.samples.kotlinapp.fragments
 
-
+import android.content.Context
+import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
+
 import com.kotlin.samples.kotlinapp.R
-import com.kotlin.samples.kotlinapp.R.id.recyclerView
-import com.kotlin.samples.kotlinapp.adapter.MinionAdapter
-import com.kotlin.samples.kotlinapp.adapter.MinionItemListener
-import com.kotlin.samples.kotlinapp.data.MinionData
-import com.kotlin.samples.kotlinapp.extensions.toast
-import com.kotlin.samples.kotlinapp.model.Minion
-import kotlinx.android.synthetic.main.fragment_minion_list.*
+import kotlinx.android.synthetic.main.fragment_empty.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,14 +18,18 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [MinionFragment.newInstance] factory method to
+ * Activities that contain this fragment must implement the
+ * [EmptyFragment.OnFragmentInteractionListener] interface
+ * to handle interaction events.
+ * Use the [EmptyFragment.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class MinionListFragment : Fragment() ,MinionItemListener {
+class EmptyFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,29 +42,58 @@ class MinionListFragment : Fragment() ,MinionItemListener {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_minion_list, container, false)
+        val view=inflater.inflate(R.layout.fragment_empty, container, false)
+        //to do
+        view.setOnClickListener {
+
+        }
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView.layoutManager= LinearLayoutManager(activity,LinearLayout.VERTICAL,false)
+
+        textView.text="Hello Kotlin!"
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //1 view container recycler
-        //2 model Minion
-        //3 origen datos List, Array : List
-        //4 row xml : row_minion
-        //5 CustomAdapter
-        //6 Setear adapter al view adapter= CustomAdapter()
-
-        val minions:List<Minion> = MinionData.getMinions()
-        recyclerView.adapter= MinionAdapter(minions,this)
+        //activity?.finish()
     }
 
-    override fun onSelectedItem(minion: Minion?) {
-        activity?.toast("minion $minion")
+    // TODO: Rename method, update argument and hook method into UI event
+    fun onButtonPressed(uri: Uri) {
+        listener?.onFragmentInteraction(uri)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is OnFragmentInteractionListener) {
+            listener = context
+        } else {
+            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+        }
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        listener = null
+    }
+
+    /**
+     * This interface must be implemented by activities that contain this
+     * fragment to allow an interaction in this fragment to be communicated
+     * to the activity and potentially other fragments contained in that
+     * activity.
+     *
+     *
+     * See the Android Training lesson [Communicating with Other Fragments]
+     * (http://developer.android.com/training/basics/fragments/communicating.html)
+     * for more information.
+     */
+    interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        fun onFragmentInteraction(uri: Uri)
     }
 
     companion object {
@@ -76,12 +103,12 @@ class MinionListFragment : Fragment() ,MinionItemListener {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment MinionFragment.
+         * @return A new instance of fragment EmptyFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-                MinionListFragment().apply {
+                EmptyFragment().apply {
                     arguments = Bundle().apply {
                         putString(ARG_PARAM1, param1)
                         putString(ARG_PARAM2, param2)
