@@ -37,7 +37,7 @@ Welcome to Kotlin version 1.2.51 (JRE 1.8.0_191-b12)
 >>> println("Welcome to the Kotlin shell")
 Welcome to the Kotlin shell
 ```
-* Usar el commando **:quit** para salir 
+* Usar el command **:quit** para salir 
 
 
 ## Kotlin Language
@@ -594,5 +594,6 @@ Kotlin is a cool language!
 - Android Studio https://developer.android.com/studio/install
 - Genymotion https://www.genymotion.com/account/create/
 - Working with the Command Line compiler https://kotlinlang.org/docs/tutorials/command-line.html
+- Jetbrains / Kotlin examples https://github.com/JetBrains/kotlin-examples
 
 
