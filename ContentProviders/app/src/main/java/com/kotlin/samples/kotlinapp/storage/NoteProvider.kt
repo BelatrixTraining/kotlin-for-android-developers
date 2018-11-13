@@ -29,11 +29,19 @@ class NoteProvider: ContentProvider() {
 
         // static{}
         init {
+            //notes
+            //notes/{id}
+            //notes/{name}
             uriMatcher.addURI(NoteContract.CONTENT_AUTHORITY,NoteContract.PATH_NOTES,NOTES)//1);
             uriMatcher.addURI(NoteContract.CONTENT_AUTHORITY,NoteContract.PATH_NOTES+"/#",NOTES_ID)//3);
             uriMatcher.addURI(NoteContract.CONTENT_AUTHORITY,NoteContract.PATH_NOTES+"/*",NOTES_NOTE_NAME)//2);
         }
 
+    }
+
+    override fun onCreate(): Boolean {
+        noteDbHelper= NoteDbHelper(context)
+        return true
     }
 
     override fun insert(uri: Uri?, values: ContentValues?): Uri? {
@@ -56,10 +64,6 @@ class NoteProvider: ContentProvider() {
         return cursor
     }
 
-    override fun onCreate(): Boolean {
-        noteDbHelper= NoteDbHelper(context)
-        return true
-    }
 
     override fun update(uri: Uri?, values: ContentValues?, selection: String?, selectionArgs: Array<String>?): Int {
         when (uriMatcher.match(uri)) {
