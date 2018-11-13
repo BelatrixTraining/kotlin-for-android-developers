@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val message:String= "Hello Java".replaceJava()
+        val message:String= "Hello Java".replaceJava()//Kotlin
         textView.text= message
 
         textView.setOnClickListener {
