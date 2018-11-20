@@ -20,9 +20,10 @@ class MainActivity : AppCompatActivity() {
     private fun ui(){
         val task = object :TimerTask(){
             override fun run() {
-                //goToView(Bundle(),"com.kotlin.samples.modules.kdashboardui.KDashboardActivity")
                 try {
+                    //goToView(Bundle(),"com.kotlin.samples.modules.kdashboardui.KDashboardActivity")
                     goToView(Bundle(),"com.kotlin.samples.modules.kauthentication.ui.LogInActivity")
+                    //goToView(Bundle(),"com.kotlin.samples.modules.knotes.ui.NotesLandingActivity")
                 }catch (e:Exception){
                     Log.v("CONSOLE","exception : $e")
                 }

@@ -22,4 +22,9 @@ ext {
     //Test
     runnerVersion='1.0.2'
     espressoVersion='3.0.2'
+
+    retrofit2 = '2.1.0'
+    okhttp3 = '3.3.1'
+    picasso = ''
+    glide='3.7.0'
 }

@@ -38,10 +38,13 @@ dependencies {
     androidTestImplementation "com.android.support.test:runner:$rootProject.runnerVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
 
+    //core
     api "com.kotlin.samples.modules:kcore-support:1.0.0"
 
+    //modules
     implementation "com.kotlin.samples.modules:kauthentication-ui:1.0.0"
     implementation "com.kotlin.samples.modules:kdashboard-ui:1.0.0"
+    //implementation "com.kotlin.samples.modules:knotes-ui:1.0.0"
 
     //implementation project(":kmymodule")
 }
