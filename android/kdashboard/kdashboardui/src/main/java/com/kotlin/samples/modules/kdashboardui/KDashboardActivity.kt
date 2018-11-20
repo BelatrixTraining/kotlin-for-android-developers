@@ -8,12 +8,13 @@ import kotlinx.android.synthetic.main.activity_kdashboard.*
 import com.kotlin.samples.modules.kdashboardui.R
 import java.lang.Exception
 
-//com.kotlin.samples.modules.kdashboardui.KDashboard
-class KDashboard:AppCompatActivity() {
+//com.kotlin.samples.modules.kdashboardui.KDashboardActivity
+class KDashboardActivity:AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kdashboard)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         ui()
     }
 
@@ -48,6 +49,11 @@ class KDashboard:AppCompatActivity() {
 
     private fun showMessage(message:String?){
         Toast.makeText(this, ": $message",Toast.LENGTH_LONG).show()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
     }
 
 }

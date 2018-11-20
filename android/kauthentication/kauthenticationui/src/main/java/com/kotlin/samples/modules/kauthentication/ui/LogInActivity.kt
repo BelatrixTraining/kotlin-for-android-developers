@@ -17,7 +17,7 @@ class LogInActivity : AppCompatActivity() {
     private fun ui(){
         button.setOnClickListener {
             try {
-                goToView(Bundle(),"com.kotlin.samples.modules.kdashboardui.KDashboard")
+                goToView(Bundle(),"com.kotlin.samples.modules.kdashboardui.KDashboardActivity")
             }catch (e:Exception){
 
             }

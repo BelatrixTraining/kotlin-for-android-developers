@@ -2,7 +2,9 @@ package com.kotlin.samples.kotlinapp
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import com.kotlin.samples.modules.kcoresupport.extensions.goToView
+import java.lang.Exception
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +20,13 @@ class MainActivity : AppCompatActivity() {
     private fun ui(){
         val task = object :TimerTask(){
             override fun run() {
-                goToView(Bundle(),"com.kotlin.samples.modules.kdashboardui.KDashboard")
+                //goToView(Bundle(),"com.kotlin.samples.modules.kdashboardui.KDashboardActivity")
+                try {
+                    goToView(Bundle(),"com.kotlin.samples.modules.kauthentication.ui.LogInActivity")
+                }catch (e:Exception){
+                    Log.v("CONSOLE","exception : $e")
+                }
+
             }
         }
 

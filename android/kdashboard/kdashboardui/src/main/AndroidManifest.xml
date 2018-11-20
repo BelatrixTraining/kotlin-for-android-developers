@@ -2,7 +2,7 @@
           package="com.kotlin.samples.modules.kdashboardui">
 
     <application>
-        <activity android:name=".KDashboard"
+        <activity android:name=".KDashboardActivity"
                   android:screenOrientation="portrait"/>
     </application>
 </manifest>

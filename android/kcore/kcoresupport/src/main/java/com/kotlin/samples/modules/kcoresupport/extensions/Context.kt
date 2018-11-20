@@ -6,11 +6,13 @@ import android.os.Bundle
 
 @Throws(Exception::class)
 fun Context.goToView(bundle:Bundle?,viewName:String?){
-    val intent:Intent= Intent()
+    val intent= Intent()
 
     viewName?.let {
         intent.setClassName(this,it)
-        intent.putExtras(bundle)
+        bundle?.let {
+            intent.putExtras(bundle)
+        }
         startActivity(intent)
     }
 }
