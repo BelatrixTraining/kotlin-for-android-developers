@@ -5,18 +5,18 @@ Course - Android for Android Developers
 
 ## Temary 
 
-- **Lesson 1** : Kotlin fundamentals
-- **Lesson 2** : Comparison to Java
-- **Lesson 3** : Functions and Lambdas
-- **Lesson 4** : Interoperability with java
-- **Lesson 5** : Null Safety
-- **Lesson 6** : Android Components with Kotlin
-- **Lesson 7** : Extensions
-- **Lesson 8** : Modular applications using Kotlin
+- Lesson 1 : Kotlin fundamentals
+- Lesson 2 : Comparison to Java
+- Lesson 3 : Functions and Lambdas
+- Lesson 4 : Interoperability with java
+- Lesson 5 : Null Safety
+- Lesson 6 : Android Components with Kotlin
+- Lesson 7 : Extensions
+- **Lesson 8 : Modular applications using Kotlin**
 
 ## Kotlin for Server Side "knotes"
 
-- Sprint boot 
+- Spring boot 
 
 https://start.spring.io/
 
@@ -104,7 +104,7 @@ http://localhost:5000/
 
 - com.kotlin.samples.kotlinapp.modules.mymodule
 
-Crear module
+Crear módulo
 
 ```
 settings.gradle
@@ -118,7 +118,7 @@ include ':app', ':kmymodule'
 implementation project(":kmymodule")
 ```
 
-Crear modulos independientes 
+Crear módulos independientes 
 
 Creamos un nuevo proyecto
 
@@ -154,7 +154,7 @@ archivesBaseName = "kauthentication"
 version = "1.0.0"
 ```
 
-Agregar un module
+Agregar un módulo
 
 ```
 kauthentication-ui
@@ -216,7 +216,7 @@ kcore
 com.kotlin.samples.modules.kcore
 ```
 
-Agregamos el module
+Agregamos el módulo
 
 ```
 kcoresupport
@@ -261,6 +261,7 @@ version = "1.0.0"
 ```
 
 ### modules
+
 - knotes.gradle
 - kcore/
 - kapp/
