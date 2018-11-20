@@ -44,7 +44,8 @@ dependencies {
     //modules
     implementation "com.kotlin.samples.modules:kauthentication-ui:1.0.0"
     implementation "com.kotlin.samples.modules:kdashboard-ui:1.0.0"
-    //implementation "com.kotlin.samples.modules:knotes-ui:1.0.0"
+    implementation "com.kotlin.samples.modules:knotes-ui:1.0.0"
+    implementation "com.kotlin.samples.modules:kcustommodule:1.0.0"
 
     //implementation project(":kmymodule")
 }

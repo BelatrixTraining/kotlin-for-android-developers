@@ -2,6 +2,7 @@ package com.kotlin.samples.modules.kauthentication.ui
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.kotlin.samples.modules.kcoresupport.extensions.goToView
 import kotlinx.android.synthetic.main.activity_log_in.*
 
@@ -19,7 +20,8 @@ class LogInActivity : AppCompatActivity() {
             try {
                 goToView(Bundle(),"com.kotlin.samples.modules.kdashboardui.KDashboardActivity")
             }catch (e:Exception){
-
+                Toast.makeText(this@LogInActivity,"exception $e",
+                    Toast.LENGTH_SHORT).show()
             }
         }
     }

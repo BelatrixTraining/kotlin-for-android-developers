@@ -45,6 +45,6 @@ class NotesLandingActivity : BaseActivity() {
 
     private fun  retrieveNotes(){
         currentCall = ApiClient.getMyApiClient().notes()
-        currentCall!!.enqueue(notesCallback)
+        currentCall?.enqueue(notesCallback)
     }
 }

@@ -30,7 +30,8 @@ class KDashboardActivity:AppCompatActivity() {
 
         buttonFA.setOnClickListener {
             try {
-                goToView( Bundle(),"com.kotlin.samples.modules.knotes.ui.FALandingActivity")
+                //goToView( Bundle(),"com.kotlin.samples.modules.knotes.ui.FALandingActivity")
+                goToView( Bundle(),"com.kotlin.samples.custommodule.ui.MyModuleLandingActivity")
             }catch (e:Exception){
                 showMessage(e.message)
             }

@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
                 }catch (e:Exception){
                     Log.v("CONSOLE","exception : $e")
                 }
-
             }
         }
 

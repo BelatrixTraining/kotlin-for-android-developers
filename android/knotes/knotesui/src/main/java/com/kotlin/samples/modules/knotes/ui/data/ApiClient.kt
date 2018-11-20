@@ -20,7 +20,7 @@ class ApiClient {
         private val API_BASE_URL = "https://agile-scrubland-67451.herokuapp.com"
         private fun interceptor(): HttpLoggingInterceptor {
             val httpLoggingInterceptor = HttpLoggingInterceptor()
-            httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+            httpLoggingInterceptor.level=HttpLoggingInterceptor.Level.BODY
             return httpLoggingInterceptor
         }
 

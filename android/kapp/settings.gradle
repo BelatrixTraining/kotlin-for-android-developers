@@ -1,1 +1,1 @@
-include ':app', ':kmymodule'
+include ':app', ':kmymodule', ':kmymodule2'
