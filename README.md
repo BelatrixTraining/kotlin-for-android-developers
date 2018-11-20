@@ -16,7 +16,7 @@ Course - Android for Android Developers
 
 ## Kotlin for Server Side "knotes"
 
-- Sprint boot 
+- Spring boot 
 
 https://start.spring.io/
 
